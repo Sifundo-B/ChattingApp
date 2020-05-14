@@ -11,15 +11,14 @@ namespace Chat.Models
     {
         [Key]
         public int Id { get; set; }
-        [DataType(DataType.Text), Required]
+        [Display(Name = "Message"), Required]
         public string Text { get; set; }
+        public DateTime? CreatedOn { get; set; }
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
-        public int CommentId { get; set; }
-        [ForeignKey("CommentId")]
+        public int CommentID { get; set; }
+        [ForeignKey("CommentID")]
         public virtual Comment Comment { get; set; }
-        public DateTime? CreatedOn { get; set; }
-
     }
-}
+} 

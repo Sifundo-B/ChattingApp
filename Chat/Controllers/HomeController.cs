@@ -10,6 +10,7 @@ namespace Chat.Controllers
     {
         public ActionResult Index()
         {
+            Session["UserID"] = 0; 
             return View();
         }
 

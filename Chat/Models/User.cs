@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -10,21 +10,19 @@ namespace Chat.Models
     public class User
     {
         [Key]
-        public int ID { get; set; }
-        [Display(Name ="User Name"), MinLength(3),Required]
-        [DataType(DataType.Text)]
-        public string Username { get; set; }
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [Display(Name = "Password"), DataType(DataType.Password), Required]
-        public string Password { get; set; }
-        [Display(Name = "Confirm password"),DataType(DataType.Password),Required]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
-        [Display(Name ="Email"),DataType(DataType.EmailAddress),Required]
+        public int Id { get; set; }
+        [Required,MinLength(3)]
+        [Display(Name ="User Name")]
+        public string UserName { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
-        [Display(Name ="Upload Image"),DataType(DataType.ImageUrl)]
+        [MinLength(6),Required,DataType(DataType.Password)]
+        public string Password { get; set; }
+        [MinLength(6), Required, DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name ="Confirm Password")]
+        public string ConfirmPassword { get; set; }
         public string ImageUrl { get; set; }
-        [Display(Name ="Date Created")]
         public DateTime? CreatedOn { get; set; }
     }
 }

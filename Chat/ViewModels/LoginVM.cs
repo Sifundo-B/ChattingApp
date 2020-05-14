@@ -8,10 +8,9 @@ namespace Chat.ViewModels
 {
     public class LoginVM
     {
-        [Required, MinLength(5)]
+        [Required]
         public string Username { get; set; }
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [Display(Name = "Password"), DataType(DataType.Password), Required]
+        [Required,DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }
