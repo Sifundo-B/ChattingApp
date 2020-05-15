@@ -22,6 +22,8 @@ namespace Chat.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         [Display(Name ="Confirm Password")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name ="Picture")]
         public string ImageUrl { get; set; }
         public DateTime? CreatedOn { get; set; }
     }

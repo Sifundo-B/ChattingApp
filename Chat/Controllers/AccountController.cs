@@ -62,6 +62,13 @@ namespace Chat.Controllers
             //If credentials are not valid
             ViewBag.Message = "Username or Password incorrect!";  
             return View();
-        } 
+        }
+        //GET: Account/Logout
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            Session["UserID"] = 0;
+            return RedirectToAction("Index","Home");
+        }
     }
 }

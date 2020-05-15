@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<Chat.Models.Comment>
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserProfile.cshtml";
 }
 <h2 class="text-success text-center">Welcome to Chat Room</h2>
 @using (Html.BeginForm("PostComment", "ChatRoom", FormMethod.Post))

@@ -15,6 +15,13 @@ namespace Chat.Controllers
         // GET: ChatRoom
         public ActionResult Index()
         {
+            int userid = Convert.ToInt32(Session["UserID"]);
+            //check if user is logged in 
+            if (userid == 0)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             //To display comments with replies.
             var comments = db.Comments.Include(x => x.Replies)
                 .OrderByDescending(c=>c.CreatedOn).ToList();
