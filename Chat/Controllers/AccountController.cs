@@ -57,6 +57,7 @@ namespace Chat.Controllers
             if (exists)
             {
                 Session["UserID"] = db.Users.Single(x => x.UserName == obj.Username).Id;
+                Session["ImageUrl"] = db.Users.Single(x=>x.UserName==obj.Username).ImageUrl;
                 return RedirectToAction("Index", "ChatRoom");
             }
             //If credentials are not valid

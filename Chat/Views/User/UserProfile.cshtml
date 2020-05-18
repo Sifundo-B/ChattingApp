@@ -49,14 +49,14 @@
         <dd>
             @Html.DisplayFor(model => model.CreatedOn)
         </dd>
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
+        </dt>*@
 
         @*<dd>
             @Html.DisplayFor(model => model.ImageUrl)
         </dd>*@
-        <dd style="margin-top:15px">
+        @*<dd style="margin-top:15px">
             @if (Model.ImageUrl.Length > 0)
             {
                 <img src="@Url.Content(Model.ImageUrl)" alt="No Image" style="height:200px" class="img-responsive img-circle" />
@@ -68,7 +68,7 @@
                 <input type="file" name="Picture" class="col-sm-2 form-control" />
                 <input type="submit" value="Save Image" class="btn btn-default" />
             }
-        </dd>
+        </dd>*@
 
 
 
